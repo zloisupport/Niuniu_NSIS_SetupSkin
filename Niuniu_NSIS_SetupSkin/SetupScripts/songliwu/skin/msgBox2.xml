@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Window size="330,210" sizebox="0,0,0,0" mininfo="330,210" maxinfo="330,210" caption="0,0,0,30" richeditcorner="20,20,20,20">
   
-  <Font id="0" name="微软雅黑" size="13" bold="false" default="true" shared="true" />
+  <Font id="0" name="Microsoft Yahei" size="13" bold="false" default="true" shared="true" />
 	
   <VerticalLayout width="330" height="210" bkcolor="#FFFFFFFF" inset="1,1,1,1" bordersize="1" bordercolor="0xFFCACACA">
   	<HorizontalLayout height="30" bkcolor="0xFFCACACA">
-  		<Label name="lblTitle" textpadding="5,0,0,0" text="警告" textcolor="0xFF000000" />
+  		<Label name="lblTitle" textpadding="5,0,0,0" text="caveat" textcolor="0xFF000000" />
       <HorizontalLayout width="67">
       	<Container />
         <!--<Button name="btnFinishedMin" width="28" height="20" normalimage="min_normal.png" hotimage="min_hot.png" pushedimage="min_pushed.png" />-->

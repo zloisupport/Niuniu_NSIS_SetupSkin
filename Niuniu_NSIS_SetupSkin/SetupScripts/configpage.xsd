@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Windows">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="VerticalLayout">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="VerticalLayout">
+                <xs:complexType mixed="true">
+                  <xs:sequence minOccurs="0">
+                    <xs:element name="VerticalLayout">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Control">
+                            <xs:complexType>
+                              <xs:attribute name="height" type="xs:unsignedByte" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Label">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                              <xs:attribute name="font" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="textcolor" type="xs:string" use="required" />
+                              <xs:attribute name="text" type="xs:string" use="required" />
+                              <xs:attribute name="padding" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element maxOccurs="unbounded" name="HorizontalLayout">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="Label">
+                                  <xs:complexType>
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                    <xs:attribute name="font" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="textcolor" type="xs:string" use="required" />
+                                    <xs:attribute name="width" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="text" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="RichEdit">
+                                  <xs:complexType>
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                    <xs:attribute name="text" type="xs:string" use="required" />
+                                    <xs:attribute name="textcolor" type="xs:string" use="required" />
+                                    <xs:attribute name="inset" type="xs:string" use="required" />
+                                    <xs:attribute name="bkimage" type="xs:string" use="required" />
+                                    <xs:attribute name="autohscroll" type="xs:boolean" use="required" />
+                                    <xs:attribute name="bordervisible" type="xs:boolean" use="required" />
+                                    <xs:attribute name="bordersize" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="bordercolor" type="xs:string" use="required" />
+                                    <xs:attribute name="focusbordercolor" type="xs:string" use="required" />
+                                    <xs:attribute name="wantreturn" type="xs:boolean" use="required" />
+                                    <xs:attribute name="wantctrlreturn" type="xs:boolean" use="required" />
+                                    <xs:attribute name="multiline" type="xs:boolean" use="required" />
+                                    <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Control">
+                                  <xs:complexType>
+                                    <xs:attribute name="width" type="xs:unsignedByte" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="Button">
+                                  <xs:complexType>
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                    <xs:attribute name="width" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="height" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="normalimage" type="xs:string" use="required" />
+                                    <xs:attribute name="hotimage" type="xs:string" use="required" />
+                                    <xs:attribute name="pushedimage" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="height" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="padding" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                        <xs:attribute name="bkimage" type="xs:string" use="required" />
+                        <xs:attribute name="visible" type="xs:boolean" use="required" />
+                        <xs:attribute name="height" type="xs:unsignedByte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Control" />
+                    <xs:element name="HorizontalLayout">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="CheckBox">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                              <xs:attribute name="width" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="heigh" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="font" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="text" type="xs:string" use="required" />
+                              <xs:attribute name="textcolor" type="xs:string" use="required" />
+                              <xs:attribute name="selected" type="xs:boolean" use="required" />
+                              <xs:attribute name="valign" type="xs:string" use="required" />
+                              <xs:attribute name="align" type="xs:string" use="required" />
+                              <xs:attribute name="textpadding" type="xs:string" use="required" />
+                              <xs:attribute name="normalimage" type="xs:string" use="required" />
+                              <xs:attribute name="normalhotimage" type="xs:string" use="required" />
+                              <xs:attribute name="selectedimage" type="xs:string" use="required" />
+                              <xs:attribute name="selectedhotimage" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Button">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                              <xs:attribute name="width" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="font" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="text" type="xs:string" use="required" />
+                              <xs:attribute name="textpadding" type="xs:string" use="required" />
+                              <xs:attribute name="textcolor" type="xs:string" use="required" />
+                              <xs:attribute name="align" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Control" />
+                        </xs:sequence>
+                        <xs:attribute name="height" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="padding" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Button">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                        <xs:attribute name="padding" type="xs:string" use="required" />
+                        <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                        <xs:attribute name="height" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="normalimage" type="xs:string" use="required" />
+                        <xs:attribute name="hotimage" type="xs:string" use="required" />
+                        <xs:attribute name="pushedimage" type="xs:string" use="required" />
+                        <xs:attribute name="disabledimage" type="xs:string" use="required" />
+                        <xs:attribute name="font" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="textcolor" type="xs:string" use="required" />
+                        <xs:attribute name="disabledtextcolor" type="xs:string" use="required" />
+                        <xs:attribute name="margin" type="xs:string" use="required" />
+                        <xs:attribute name="text" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="width" type="xs:unsignedShort" use="optional" />
+                  <xs:attribute name="height" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="roundcorner" type="xs:string" use="optional" />
+                  <xs:attribute name="bkimage" type="xs:string" use="optional" />
+                  <xs:attribute name="bkcolor" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" name="Button">
+                <xs:complexType>
+                  <xs:attribute name="float" type="xs:boolean" use="required" />
+                  <xs:attribute name="inset" type="xs:string" use="required" />
+                  <xs:attribute name="pos" type="xs:string" use="required" />
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="height" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="normalimage" type="xs:string" use="required" />
+                  <xs:attribute name="hotimage" type="xs:string" use="required" />
+                  <xs:attribute name="pushedimage" type="xs:string" use="required" />
+                  <xs:attribute name="visible" type="xs:boolean" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Include">
+                <xs:complexType>
+                  <xs:attribute name="source" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

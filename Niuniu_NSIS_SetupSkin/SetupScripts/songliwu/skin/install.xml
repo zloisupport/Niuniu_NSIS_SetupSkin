@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Window size="570,410" sizebox="0,0,0,0" caption="0,0,0,810" bktrans="true">
-  <Font id="0" name="微软雅黑" size="12" bold="false" default="true"/>
-  <Font id="1" name="微软雅黑" size="12" bold="true" />
-  <Font id="2" name="微软雅黑" size="24" bold="false" />
-  <Font id="3" name="微软雅黑" size="16" bold="false" />
-  <Font id="4" name="宋体" size="32" bold="false" />
-  <Font id="5" name="微软雅黑" size="14" bold="false" />
+<Font id = "0" name = "Microsoft Yahei" size = "12" bold = "false" default = "true" />
+   <Font id = "1" name = "Microsoft Yahei" size = "12" bold = "true" />
+   <Font id = "2" name = "Microsoft Yahei" size = "24" bold = "false" />
+   <Font id = "3" name = "Microsoft Yahei" size = "16" bold = "false" />
+   <Font id = "4" name = "Songti" size = "32" bold = "false" />
+   <Font id = "5" name = "Microsoft Yahei" size = "14" bold = "false" />
   
 <Include source="default.xml" />
   <VerticalLayout>  	
