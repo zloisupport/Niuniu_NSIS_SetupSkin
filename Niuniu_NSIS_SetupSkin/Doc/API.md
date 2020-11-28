@@ -201,9 +201,45 @@ pop $0
 
 - 3). В реальном процессе установки, чтобы сделать информацию о ходе выполнения максимально точной, используется метод декомпрессии 7z
   -Это требует, чтобы перед созданием установочного пакета вам нужно было упаковать файлы, которые нужно установить, в сжатый пакет 7z, а затем указать установку в NSIS
+```nsis
+Function ExtractFunc
+	# 7Z сжатый пакет установочных файлов
+	SetOutPath $INSTDIR
+	File /oname=logo.ico "${INSTALL_ICO}" 	
+
+	#По макросу, чтобы различить, стоит ли переходить на индикатор выполнения, отличный от NSIS7Z
+!ifdef INSTALL_WITH_NO_NSIS7Z
+    !include "..\app.nsh"
+!else
+    File "${INSTALL_7Z_PATH}"
+    GetFunctionAddress $R9 ExtractCallback
+    nsis7zU::ExtractWithCallback "$INSTDIR\${INSTALL_7Z_NAME}" $R9
+	Delete "$INSTDIR\${INSTALL_7Z_NAME}"
+!endif
+	
+	Sleep 500
+FunctionEnd
+```
 
   -В NSIS есть соответствующие плагины 7z для распаковки, которые нужно вызывать в потоке, чтобы избежать зависания интерфейса.
+```nsis
+nsNiuniuSkin::SetControlAttribute $hInstallDlg "slrProgress" "min" "0"
+nsNiuniuSkin::SetControlAttribute $hInstallDlg "slrProgress" "max" "100"
+
+# Временно сохраните эти файлы во временном каталоге.
+#Call BakFiles
+
+#Запустить фоновый поток с низким приоритетом
+GetFunctionAddress $0 ExtractFunc
+BgWorker::CallAndWait
+```
 
 - 4). Приведенные в настоящее время примеры включают только распространенные сценарии NSIS, относящиеся к интерфейсу пользовательского интерфейса, требуется дальнейшая обработка записи в конкретный реестр, резервное копирование файлов и другие операции, и вам необходимо самостоятельно написать другой сценарий NSIS.
 
-- 5). Картинка при установке интерфейса поддерживает карусель, и интервал можно установить. Запись в XML выглядит следующим образом
+- 5). Картинка при установке интерфейса поддерживает карусель, и интервал можно установить. Запись в XML выглядит следующим образом:
+```nsis
+<VerticalLayout width="570" height="345">
+<ImageShow images="bg1.png bg2.png" imagecount="2" loop="true" width="570" height="345" /> 
+</VerticalLayout>
+```
+
