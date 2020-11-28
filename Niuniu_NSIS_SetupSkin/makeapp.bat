@@ -1,6 +1,6 @@
 del ".\SetupScripts\app.7z"
 
-rem …˙≥…app.7z
+rem —Å–æ–∑–¥–∞–µ–º app.7z
 7z.exe a ".\SetupScripts\app.7z" ".\FilesToInstall\*.*"
 
 @set DestPath=%cd%\FilesToInstall\

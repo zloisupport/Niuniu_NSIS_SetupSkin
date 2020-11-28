@@ -1,6 +1,6 @@
 del ".\SetupScripts\%1\skin.zip"
 
-rem Éú³Éskin.zip
+rem Ğ¡Ğ¾Ğ·Ğ´Ğ°ĞµĞ¼ skin.zip
 7z.exe a ".\SetupScripts\%1\skin.zip" ".\SetupScripts\%1\skin\*.*"
 
 @set DestPath=%cd%\SetupScripts\%1\skin\

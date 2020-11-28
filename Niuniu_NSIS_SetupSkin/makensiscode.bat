@@ -7,7 +7,7 @@ del ".\SetupScripts\app.nsh"
 @set total=1
 
 @echo off
-@rem 统计文件总数 
+@rem Общее количество статистических файлов
 for /f  "tokens=*" %%a in ('dir /s/b/a-d %DestPath%') do (
 @set /a total+=1
 )
@@ -15,7 +15,7 @@ for /f  "tokens=*" %%a in ('dir /s/b/a-d %DestPath%') do (
 @set curr=0
 @set tmpValue=1
 
-@rem 做首级目录处理 
+@rem Выполните обработку каталога первого уровня
 for /f "delims=*" %%d in ('dir /a-d/b %DestPath%') do (
 set /a curr+=1
 @echo Push !total!  >> %DestFiles%
@@ -25,18 +25,18 @@ set /a curr+=1
 @rem @echo  "%%d"
 )
 
-@rem 循环遍历各个子目录，进行处理，生成NSIS指令 
+@rem Просматривайте подкаталоги, обрабатывайте их и генерируйте команды NSIS.
 @set dstString=
 for /f "delims=*" %%a in ('dir /s/ad/b %DestPath%') do (
 
 @set foldername=%%a
 @set "foldername=!foldername:%DestPath%=%dstString%!"
 @rem @echo !foldername!
-@rem 截取出来相关的目录 设置OutputPath
+@rem Вырежьте соответствующий каталог Set OutputPath
 
 @echo SetOutPath "$INSTDIR\!foldername!" >> %DestFiles%
 
-@rem 循环其下的文件 
+@rem Зациклить файлы под ним
 for /f "delims=*" %%c in ('dir /a-d/b %%a') do (
 @set /a curr+=1
 @echo Push !total!  >> %DestFiles%
